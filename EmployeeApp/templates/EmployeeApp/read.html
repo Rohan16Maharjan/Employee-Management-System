@@ -1,0 +1,19 @@
+{% extends 'main.html' %} {% block content %} {% for i in read %}
+<th>{{i.first_name}}</th>
+<th>{{i.last_name}}</th>
+<th>{{i.dept}}</th>
+<th>{{i.salary}}</th>
+<th>{{i.bonus}}</th>
+<th>{{i.Role}}</th>
+<th>{{i.phone}}</th>
+<th>{{i.hire_date}}</th>
+
+<th>
+	<a href="{% url 'updateEmployee' i.id %}">Update Employee</a>
+</th>
+<th>
+	<a class="check" href="{% url 'deleteEmployee' i.id %}">Delete</a>
+</th>
+<br />
+
+{% endfor %} {% endblock content %}

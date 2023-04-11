@@ -1,0 +1,26 @@
+<h1>Welcome to the home page</h1>
+<h2>Department</h2>
+{% extends 'main.html' %} {% block content %}
+<ul>
+	<li>
+		<a href="{% url 'addEmployee' %}">Add Employee</a>
+	</li>
+	<li>
+		<a href="">Add Department</a>
+	</li>
+	<li>
+		<a href="">Add Project</a>
+	</li>
+	<li>
+		<a href="">Add Role</a>
+	</li>
+</ul>
+<h2>Employee</h2>
+<ul>
+	<li>
+		<a href="{% url 'viewEmployee' %}">View Employees</a>
+	</li>
+</ul>
+<a href="{% url 'logout' %}">Logout</a>
+<a href="">Profile and Update</a>
+{% endblock content %}

@@ -4,7 +4,7 @@ Created using:
 
 
 
-Html,Css,Django,Sqlite
+Html,Css,Bootstrap,Django,Sqlite
 
 
 Concepts Implementation:

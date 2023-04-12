@@ -12,6 +12,12 @@ from django.contrib import messages
 def home(request):
   return render(request,'EmployeeApp/home.html')
 
+def depart(request):
+  return render(request,'EmployeeApp/depart.html')
+
+def emp(request):
+  return render(request,'EmployeeApp/emp.html')
+
 def addEmployee(request):
   form = EmployeeForm()
   if request.method == 'POST':
@@ -86,3 +92,5 @@ def register(request):
 
     context = {'form': form}
     return render(request,'EmployeeApp/register.html',context)
+
+

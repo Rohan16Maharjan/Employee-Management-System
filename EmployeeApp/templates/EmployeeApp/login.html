@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% block content %}
-
+<!-- 
 <form action="" method="POST">
 	{% for msg in messages %}
 
@@ -13,11 +13,69 @@
 	<input type="password" name="password" placeholder="Enter your password" />
 	<br />
 	<br />
-	<input type="submit" value="Login" />
+	<button type="submit" class="btn btn-success">Login</button>
+
 	<p>OR</p>
+	<a href="{% url 'register' %}">
+		<button type="submit" class="btn btn-primary">Register</button>
+	</a>
 	<button>
 		<a href="{% url 'register' %}"> Register </a>
-	</button>
-</form>
+	</button>  -->
+<!-- </form> -->
+<!-- <div class="loginBox">
+	<img
+		class="user"
+		src="https://i.ibb.co/yVGxFPR/2.png"
+		height="100px"
+		width="100px"
+	/>
+	<h3>Sign in here</h3>
+	<form action="" method="POST">
+		{% for msg in messages %}
 
+		<div class="alert alert-danger" role="alert">{{msg}}</div>
+
+		{% endfor %} {% csrf_token %}
+		<div class="inputBox">
+			<input id="uname" type="text" name="username" placeholder="Username" />
+			<input id="pass" type="password" name="password" placeholder="Password" />
+		</div>
+		<input type="submit" name="" value="Login" />
+	</form>
+	 <a href="#">Forget Password<br /> </a> -->
+
+<!-- <div class="text-center">
+		<a href="{% url 'register' %}">
+			<input type="submit" name="" value="Register" />
+		</a>
+	</div>
+</div>  -->
+
+<!-- main -->
+<div class="main-w3layouts wrapper">
+	<h1>Login</h1>
+	<div class="main-agileinfo">
+		<div class="agileits-top">
+			<form action="#" method="post">
+				{% for msg in messages %}
+
+		<div class="alert alert-danger" role="alert">{{msg}}</div>
+
+		{% endfor %}
+				{% csrf_token %}
+				<div class="inputBox">
+					
+					<input id="uname" class="inputlogin"  type="text" name="username" placeholder="Username" />
+					<input id="pass" type="password"  name="password" placeholder="Password" />
+				</div>
+				<input type="submit" name="" value="Login" />
+			</form>
+
+		
+			</form>
+			<p>Don't have an Account? <a href="{% url 'register' %}">Register Now!</a></p>
+		</div>
+	</div>
+</div>
 {% endblock content %}

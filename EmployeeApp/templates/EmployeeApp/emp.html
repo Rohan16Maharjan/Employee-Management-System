@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% block content %} {% include 'nav.html' %}
+<h1>Employee</h1>
+
+<div
+	class="cards"
+	style="display: flex; justify-content: center; gap: 1rem; margin-top: 5rem"
+>
+	<div class="card" style="width: 28rem">
+		<div class="card-body">
+			<p class="card-text">
+				Some quick example text to build on the card title and make up the bulk
+				of the card's content.
+			</p>
+			<a href="{% url 'addEmployee' %}" class="btn btn-primary">Add Employee</a>
+		</div>
+	</div>
+	<br />
+	<div class="card" style="width: 28rem">
+		<div class="card-body">
+			<p class="card-text">
+				Some quick example text to build on the card title and make up the bulk
+				of the card's content.
+			</p>
+			<a href="{% url 'viewEmployee' %}" class="btn btn-primary"
+				>View Employee</a
+			>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

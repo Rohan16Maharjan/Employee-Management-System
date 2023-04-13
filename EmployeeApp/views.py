@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import EmployeeForm,RegisterForm
+from .forms import EmployeeForm,RegisterForm,RoleForm,DepartmentForm
 from .models import Employee
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -26,13 +26,38 @@ def addEmployee(request):
       form.save()
       return redirect('home')
   context = {'form':form}
-  return render(request,'EmployeeApp/index.html',context)
+  return render(request,'EmployeeApp/addEmp.html',context)
+
+
+
+def addRole(request):
+  role = RoleForm()
+  if request.method == 'POST':
+    form = RoleForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return redirect('depart')
+  context = {'role':role}
+  return render(request,'EmployeeApp/addRole.html',context)
+
+
+def addDepart(request):
+  depart = DepartmentForm()
+  if request.method == 'POST':
+    form = DepartmentForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return redirect('depart')
+  context = {'depart':depart}
+  return render(request,'EmployeeApp/addDepart.html',context)
 
 
 def readEmployee(request):
   read = Employee.objects.all()
   context ={'read':read}
   return render(request,'EmployeeApp/read.html',context)
+
+
 
 def updateEmployee(request,id):
   add = Employee.objects.get(pk=id)
@@ -41,7 +66,7 @@ def updateEmployee(request,id):
     form = EmployeeForm(request.POST,instance=add)
     if form.is_valid():
       form.save()
-      return redirect('home')
+      return redirect('emp')
   context = {'form':form}
   return render(request,'EmployeeApp/update.html',context)
 
@@ -49,7 +74,7 @@ def deleteEmployee(request,id):
   delEmployee = Employee.objects.get(id=id)
   if request.method == "POST":
     delEmployee.delete()
-    return redirect('home')
+    return redirect('emp')
   context = {'delEmployee':delEmployee}
   return render(request,"EmployeeApp/delete.html",context)
 
@@ -92,5 +117,4 @@ def register(request):
 
     context = {'form': form}
     return render(request,'EmployeeApp/register.html',context)
-
 

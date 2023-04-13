@@ -2,10 +2,26 @@
 
 <form action="" method="POST">
 	{% csrf_token %}
-	<p>Are you sure you want to delete {{delEmployee.first_name}} ?</p>
+	<h1 style="text-align: center">
+		Are you sure you want to delete {{delEmployee.first_name}} ?
+	</h1>
+
 	<input type="submit" value="Confirm" />
-	<a href="{% url 'home' %}">
-		<button>Go back</button>
+
+	<a style="text-decoration: none" href="{% url 'home'  %}">
+		<button
+			style="
+				background-color: rgb(141, 194, 111);
+				color: white;
+
+				padding: 0.75rem;
+			"
+			class="form-control input-md"
+			type="button"
+			class="btn btn-danger"
+		>
+			Go Back
+		</button>
 	</a>
 </form>
 {% endblock content %}

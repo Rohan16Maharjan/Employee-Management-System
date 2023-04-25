@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import EmployeeForm,RegisterForm,RoleForm,DepartmentForm
-from .models import Employee
+from .models import Employee,Department,Role
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import  login,authenticate,logout
@@ -24,7 +24,7 @@ def addEmployee(request):
     form = EmployeeForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('home')
+      return redirect('emp')
   context = {'form':form}
   return render(request,'EmployeeApp/addEmp.html',context)
 
@@ -57,7 +57,15 @@ def readEmployee(request):
   context ={'read':read}
   return render(request,'EmployeeApp/read.html',context)
 
+def readDepartment(request):
+  read = Department.objects.all()
+  context ={'read':read}
+  return render(request,'EmployeeApp/readDepart.html',context)
 
+def readRole(request):
+  read = Role.objects.all()
+  context ={'read':read}
+  return render(request,'EmployeeApp/readRole.html',context)
 
 def updateEmployee(request,id):
   add = Employee.objects.get(pk=id)

@@ -5,23 +5,24 @@
 	class="cards"
 	style="display: flex; justify-content: center; gap: 1rem; margin-top: 5rem"
 >
-	<div class="card" style="width: 28rem">
+	<div class="card" style="width: 33rem">
 		<div class="card-body">
-			<p class="card-text">
-				Some quick example text to build on the card title and make up the bulk
-				of the card's content.
-			</p>
+			<p class="card-text text-center m-4">Add or View the Departments.</p>
 			<a href="{% url 'addDept' %}" class="btn btn-primary">Add Department</a>
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="{% url 'viewDepartment' %}" class="btn btn-primary"
+				>View Department</a
+			>
 		</div>
 	</div>
 	<br />
-	<div class="card" style="width: 28rem">
+	<div class="card" style="width: 33rem">
 		<div class="card-body">
-			<p class="card-text">
-				Some quick example text to build on the card title and make up the bulk
-				of the card's content.
-			</p>
+			<p class="card-text text-center m-4">Add or View the Roles.</p>
 			<a href="{% url 'addRole' %}" class="btn btn-primary">Add Role</a>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="{% url 'viewRole' %}" class="btn btn-primary">View Role</a>
 		</div>
 	</div>
 </div>

@@ -127,3 +127,14 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# SMTP Configuration Password Reset
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER='usedforpractice123@gmail.com'
+EMAIL_HOST_PASSWORD='ojwzwrblmdhqlvld'
+
+LOGIN_URL = 'login'  # Replace 'login' with the actual URL name of your login view
